@@ -9,10 +9,10 @@ function range(start, end, step = start < end ? 1 : -1) {
   return array;
 }
 
-function sum(array) {
-  let total = 0;
-  for (let value of array) {
-    total += value;
+function sum(arr) {
+  let sum = 0;
+  for(let i = 0; i < arr.length; i++){
+    sum +=arr[i];
   }
-  return total;
+  return sum;
 }
