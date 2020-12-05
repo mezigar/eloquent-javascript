@@ -9,7 +9,7 @@ function reverseArrayInPlace(array) {
 }
 
 function arrayToList(arr) {
-  list = {};
+  list = null;
   arr = reverseArrayInPlace(arr);
   for ( let i = 0; i < arr.length ; i++){
    
@@ -19,10 +19,20 @@ function arrayToList(arr) {
   return list
 }
 
+function prepend(value, list) {
+  return {value, rest: list};
+}
+
 function listToArray(list) {
   arr = [];
   for ( let node = list; node; node = node.rest){
     arr.push(node.value);
   }
   return arr;
+}
+
+function nth(list, n) {
+  if (!list) return undefined;
+  else if (n == 0) return list.value;
+  else return nth(list.rest, n - 1);
 }
